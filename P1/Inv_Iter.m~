@@ -1,0 +1,16 @@
+% Inverse Iteration Methods
+
+function Julia_set = Inv_Iter(phi,x0)
+count = 1;
+julia_set = [];
+julia_set = [julia_set, x0];
+
+
+while(count < e^10)
+    se
+
+
+
+
+
+
