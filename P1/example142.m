@@ -1,5 +1,5 @@
 % Example P. 142
-phi = inline('z^2 - 1.25');
+function graph = example142(phi,x0)
 fixpt1 = (1 + sqrt(6))/2;
 fixpt2 = (1 - sqrt(6))/2;
 
@@ -10,7 +10,7 @@ M = 2* ones(141,361);
 for j = 1:141
     y = -0.7 + (j-1)*0.01;
     for i = 1:361
-        x = -1.8 + (i-1)*0.01;
+        x = x0 + (i-1)*0.01;
         z = x + 1i *y;
         zk = z;
         iflag1 = 0;
@@ -41,4 +41,4 @@ for j = 1:141
     end
 end
 
-image([-1.8 1.8], [-0.7 0.7], M), axis xy
+image([-1.8 1.8], [-0.7,0.7], M), axis xy
