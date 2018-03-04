@@ -1,0 +1,10 @@
+funtion ot = Neuron(input,weight)
+
+if length(input) ~= length(weight)
+    warning('Incompatable Size of Input and Weight')
+end
+for i = 1:length(input)
+end
+
+
+end
