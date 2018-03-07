@@ -1,24 +1,29 @@
 X = [train0',train1']';
 Y = [zeros(5923,1);ones(6742,1)];
 
-syn0 = (rand(3,784)*0.001 -0.0005)';
+syn0 = rand(784,3)*0.001 -0.0005;
 
-syn1 = (rand(3,3)-0.5);
+syn1 = (rand(3,1)-0.5);
 
-for iter = 1:10
-    
+for iter = 1:10000
+    if mod(iter,100) == 0
+        iter
+    end
     l0 = X;
 
     l1 = Neuron(X,syn0);
     
     l2 = Neuron(l1,syn1);
+
+    Error = Y -l2;
     
+    l2_delta = Error.*(l2.*(1-l2));
     
-    output = sum(l2,2);
+    l1_delta = l2_delta*syn1'.* (l1.*(1-l1));
     
-    Error = Y - output;
+    eta = (0.1-0.01)*rand(1)+0.01;
     
-    l1_delta = l1_error.*(l1.*(1-l1));
+    syn1 = syn1 + eta * l1'*l2_delta;
     
-    syn0 = syn0 + double(l0)'*l1_delta;
+    syn0 = syn0 + double(X)'*l1_delta;
 end
