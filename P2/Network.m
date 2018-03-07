@@ -1,3 +1,4 @@
+load('mnist_all.mat')
 X = [train0',train1']';
 Y = [zeros(5923,1);ones(6742,1)];
 
@@ -7,7 +8,7 @@ syn1 = (rand(3,1)-0.5);
 
 for iter = 1:10000
     if mod(iter,100) == 0
-        iter
+        fprintf("Current %d%% \n",iter/10000)
     end
     l0 = X;
 
