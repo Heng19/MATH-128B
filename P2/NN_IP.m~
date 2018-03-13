@@ -1,0 +1,1 @@
+[syn0,syn1] = Network(90);
