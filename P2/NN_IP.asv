@@ -19,9 +19,5 @@ end
 x = linspace(1,100,100);
 
 plot(x,Error_10,x,Error_50,x,Error_100);
-title('Log Loss Error');
-legend('n = 10','n = 50','n = 100');
-
-plot(x,Rate_10,x,Rate_50,x,Rate_100);
-title('Accurancy on the Traning Set');
-legend('n = 10','n = 50','n = 100');
+title('Log loss Error');
+legend('n = 10','y =')

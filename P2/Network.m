@@ -1,9 +1,12 @@
-function [syn0,syn1] = Network(N_neuron)
+function [syn0,syn1,Error,Rate] = Network(N_neuron)
 load('mnist_all.mat')
 Test_data = {train0',train1',train2',train3',train4',train5',train6',train7',train8',train9'};
 
 X = cell2mat(Test_data)';
 Y =[];
+
+Error = [];
+Rate = [];
 for i = 1:10
     Y = [Y;zeros(size(Test_data{i},2),1)+i];
 end
@@ -12,7 +15,7 @@ syn0 = (rand(784,N_neuron)-0.5)/sqrt(size(X,1));
 
 syn1 = (rand(N_neuron,10)-0.5)/sqrt(size(X,1));
 
-eta = 0.045;
+eta = 0.02;
 
 iteration = 1000;
 for iter = 1:iteration
@@ -40,6 +43,8 @@ for iter = 1:iteration
         fprintf("Current %d%% \n",iter/iteration*100);
         fprintf("Log loss Error: %d \n",error);
         fprintf("Correctness Rate: %d \n", rate);
+        Error = [Error,error];
+        Rate = [Rate,rate];
     end
     
 end
