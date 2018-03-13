@@ -7,8 +7,8 @@ for i = 1:10
 end
 
 
-[syn0_10,syn1_10,Error_10,Rate_10] = Network(10);
-[error_10,rate_10] = Error_Cal(X,syn0_10,syn1_10,Y);
+[syn0_10,syn1_10,syn2_10,Error_10,Rate_10] = Network2(10,10);
+[error_10,rate_10] = Error_Cal(X,syn0_10,syn1_10,syn2_10,Y);
 
 [syn0_50,syn1_50,Error_50,Rate_50] = Network(50);
 [error_50,rate_50] = Error_Cal(X,syn0_50,syn1_50,Y);
@@ -19,5 +19,9 @@ end
 x = linspace(1,100,100);
 
 plot(x,Error_10,x,Error_50,x,Error_100);
-title('Log loss Error');
-legend('n = 10','y =')
+title('Log Loss Error');
+legend('n = 10','n = 50','n = 100');
+
+plot(x,Rate_10,x,Rate_50,x,Rate_100);
+title('Accurancy on the Traning Set');
+legend('n = 10','n = 50','n = 100');
