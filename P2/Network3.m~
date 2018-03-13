@@ -1,4 +1,4 @@
-function [syn0,syn1,syn2,Error,Rate] = Network(N1,N2)
+function [syn0,syn1,syn2,syn3,Error,Rate] = Network(N1,N2)
 load('mnist_all.mat')
 Test_data = {train0',train1',train2',train3',train4',train5',train6',train7',train8',train9'};
 
@@ -53,5 +53,5 @@ for iter = 1:iteration
         Error = [Error,error];
         Rate = [Rate,rate];
     end
-end
+    
 end

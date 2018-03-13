@@ -7,8 +7,8 @@ for i = 1:10
 end
 
 
-[syn0_10,syn1_10,syn2_10,Error_10,Rate_10] = Network2(10,10);
-[error_10,rate_10] = Error_Cal2(X,syn0_10,syn1_10,syn2_10,Y);
+[syn0_10,syn1_10,syn2_10,syn_3_10,Error_10,Rate_10] = Network3(200,200,200);
+[error_10,rate_10] = Error_Cal3(X,syn0_10,syn1_10,syn2_10,syn3_10,Y);
 
 [syn0_20,syn1_20,syn2_20,Error_20,Rate_20] = Network2(20,10);
 [error_20,rate_20] = Error_Cal2(X,syn0_20,syn1_20,syn2_20,Y);

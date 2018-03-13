@@ -24,4 +24,4 @@ legend('n = (10,10)','n = (20,10)','n = (50,10)');
 
 plot(x,Rate_10,x,Rate_20,x,Rate_100);
 title('Accurancy on the Traning Set');
-legend('n = (10,10)','n = (20,10)','n = (50,10)','location','southeast');
+legend('n = (10,10)','n = (20,10)','n = (50,10)',');
